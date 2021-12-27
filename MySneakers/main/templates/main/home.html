@@ -1,0 +1,37 @@
+{% extends 'main/base.html '%}
+{% load static %}
+{% block title %}
+My Sneakers
+{% endblock title %}
+
+
+{% block header %}
+<h1> My Sneakers </h1>
+<div class="header-container">
+    <h2> Total Items: <span class="green"> {{sneakers_count}} </span> </h2>
+    <h2> Total Value: <span class="green"> {{total_value}} zł </span> </h2>
+</div>
+{% endblock header%}
+
+{% block content %}
+ 
+    <div class="sneakers-container">
+        {% for sneaker in sneakers%}
+
+        <div class="item"> 
+            <img src="{{sneaker.img.url}}" > 
+            <div class="item-info">
+                <h3> {{sneaker.title}} </h3>
+                <h3> Size: {{sneaker.size}} US </h3>
+                <h3> Price: {{sneaker.price}} zł</h3>
+            </div>
+        </div>
+
+        {% endfor %}
+ 
+   
+
+    </div>
+
+{% endblock content %}
+
