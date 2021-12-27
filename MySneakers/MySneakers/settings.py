@@ -25,7 +25,7 @@ SECRET_KEY = '8b1v4l%@44pky$i5=cy1zj#lfd6(mo+eg1++qthmj+kn2osa6m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','https://django-mysneakers.herokuapp.com/']
 
 
 # Application definition
@@ -127,3 +127,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
