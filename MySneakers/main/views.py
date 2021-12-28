@@ -26,7 +26,7 @@ def home(request):
     
     
 def start(request):
-   sneakers = Sneakers.objects.all()
+    sneakers = Sneakers.objects.all()
 
     
     total_value = 0
