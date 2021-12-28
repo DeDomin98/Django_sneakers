@@ -31,4 +31,4 @@ def start(request):
         sneakers = Sneakers.objects.all()
     except:
         sneakers = "CHUJ"
-    return render (request, 'main/start.html', {'xd':sneakers})
+    return render (request, 'main/base.html', {'xd':sneakers})
