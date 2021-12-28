@@ -26,9 +26,20 @@ def home(request):
     
     
 def start(request):
-    sneakers = "nic"
+   sneakers = Sneakers.objects.all()
+
+    
+    total_value = 0
     try:
-        sneakers = Sneakers.objects.all()
+        for item in sneakers:
+            total_value += item.price
     except:
-        sneakers = "CHUJ"
-    return render (request, 'main/base.html', {'xd':sneakers})
+        pass
+
+    context = {
+    'sneakers': sneakers, 
+    'sneakers_count': len(sneakers),
+    'total_value': total_value
+    }
+    
+    return render (request, 'main/base.html', context)
