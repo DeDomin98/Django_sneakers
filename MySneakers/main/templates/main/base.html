@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My Sneakers </title>
+    <title> {% block title %} {% endblock title %} </title>
     <link rel="stylesheet" type="text/css" href=" {% static 'main/home.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,11 +19,13 @@
         <nav >
             <a href="/"> Portfolio </a> 
         </nav>
+      {% block header %}
     <h1> My Sneakers </h1>
 <div class="header-container">
     <h2> Total Items: <span class="green"> {{sneakers_count}} </span> </h2>
     <h2> Total Value: <span class="green"> {{total_value}} zł </span> </h2>
 </div>
+      {% endblock header %}
         
     </header>
 
@@ -32,6 +34,7 @@
         <section class="sneakers">
             <article > 
 
+      {% block container %}
 
         <div class="sneakers-container">
             {% for sneaker in sneakers%}
@@ -50,6 +53,8 @@
    
 
         </div>
+      {% endblock container %}
+               
             </article>
 
 
