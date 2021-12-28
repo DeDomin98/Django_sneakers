@@ -26,4 +26,9 @@ def home(request):
     
     
 def start(request):
-    return render (request, 'main/start.html', {})
+    sneakers = "nic"
+    try:
+        sneakers = Sneakers.objects.all()
+    except:
+        sneakers = "CHUJ"
+    return render (request, 'main/start.html', {'xd':sneakers})
