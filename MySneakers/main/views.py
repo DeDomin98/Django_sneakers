@@ -23,3 +23,7 @@ def home(request):
     
     return render (request, 'main/home.html', context)
     
+    
+    
+def start(request):
+    return render (request, 'main/start.html', {})
